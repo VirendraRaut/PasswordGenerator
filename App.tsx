@@ -27,6 +27,7 @@ export default function App() {
       const charactersIndex = Math.round(Math.random() * characters.length);
       result += characters.charAt(charactersIndex);
     }
+    return result;
   };
 
   const reseptPassword = () => {};

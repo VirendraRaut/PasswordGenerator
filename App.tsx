@@ -10,8 +10,8 @@ import {
   Alert,
   SafeAreaView,
   StatusBar,
-  Clipboard,
 } from 'react-native';
+import Clipboard from '@react-native-community/clipboard';
 import * as yup from 'yup';
 
 const passwordSchema = yup.object().shape({

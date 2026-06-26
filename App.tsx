@@ -25,6 +25,7 @@ export default function App() {
     let result = '';
     for (let i = 0; i < passwordLength; i++) {
       const charactersIndex = Math.round(Math.random() * characters.length);
+      result += characters.charAt(charactersIndex);
     }
   };
 

@@ -8,10 +8,10 @@ import {
   Switch,
   ScrollView,
   Alert,
-  SafeAreaView,
   StatusBar,
 } from 'react-native';
 import Clipboard from '@react-native-community/clipboard';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import * as yup from 'yup';
 
 const passwordSchema = yup.object().shape({

@@ -1,45 +1,40 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
+import { StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+// form validation
+import * as yup from 'yup';
 
-import { NewAppScreen } from '@react-native/new-app-screen';
-import { StatusBar, StyleSheet, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-  useSafeAreaInsets,
-} from 'react-native-safe-area-context';
+const passwordSchema = yup.object().shape({
+  passwordLength: yup
+    .number()
+    .min(6, 'Password must have at least 6 characters')
+    .min(12, 'Password can have maximum 12 characters')
+    .required(),
+});
 
-function App() {
-  const isDarkMode = useColorScheme() === 'dark';
+export default function App() {
+  const [password, setPassword] = useState('');
+  const [isPasswordGenerated, setIsPasswordGenerated] = useState(false);
+  const [lowercase, setLowercase] = useState(false);
+  const [uppercase, setUppercase] = useState(false);
+  const [symbols, useSymbols] = useState(false);
+  const [numbers, userNumbers] = useState(false);
+
+  const generatePasswordString = (passwordLength: number) => {};
+
+  const createPassword = (characters: string, passwordLength: number) => {
+    let result = '';
+    for (let i = 0; i < passwordLength; i++) {
+      const charactersIndex = Math.round(Math.random() * characters.length);
+    }
+  };
+
+  const reseptPassword = () => {};
 
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <AppContent />
-    </SafeAreaProvider>
-  );
-}
-
-function AppContent() {
-  const safeAreaInsets = useSafeAreaInsets();
-
-  return (
-    <View style={styles.container}>
-      <NewAppScreen
-        templateFileName="App.tsx"
-        safeAreaInsets={safeAreaInsets}
-      />
+    <View>
+      <Text>App</Text>
     </View>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-});
-
-export default App;
+const styles = StyleSheet.create({});
